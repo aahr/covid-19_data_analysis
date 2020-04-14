@@ -54,7 +54,7 @@ for nIdx = 1:length(delimiterIdx)-1
                 lineBreakData = f(delimiterIdx(nIdx-2):delimiterIdx(nIdx-1));
                 lineBreakIdx = strfind(lineBreakData,newline);
                 
-                if contains(lineBreakData(lineBreakIdx+2:end-1),'"') %there is a comma within state/province
+                if contains(lineBreakData(lineBreakIdx+1:end-1),'"') %there is a comma within state/province
                     lineBreakData = f(delimiterIdx(nIdx-2):delimiterIdx(nIdx)-1);
                     lineBreakIdx = strfind(lineBreakData,newline);
                     dataMatrix{m-1,end} = lineBreakData(2:lineBreakIdx-1);%fix last entry from previous row
